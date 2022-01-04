@@ -1,16 +1,19 @@
-import { Stat, StatHelpText, StatLabel, StatNumber } from '@chakra-ui/react'
+import { HStack } from '@chakra-ui/react'
+
+import { ProductItem } from '@/components/ui/product/ProductItem'
 
 import { Product } from '@/types/product'
 
-type ProductListPropsType = Product
+type ProductListPropsType = {
+  products: Product[]
+}
 
-export const ProductItem = ({ id, productName, price, description }: ProductListPropsType) => {
-  console.log(id)
+export const ProductList = ({ products }: ProductListPropsType) => {
   return (
-    <Stat>
-      <StatLabel>{productName}</StatLabel>
-      <StatNumber>¥{price}</StatNumber>
-      <StatHelpText>{description}</StatHelpText>
-    </Stat>
+    <HStack spacing="4">
+      {products.map((product) => (
+        <ProductItem key={product.id} {...product} />
+      ))}
+    </HStack>
   )
 }
