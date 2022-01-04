@@ -1,5 +1,9 @@
+import { NextPage } from 'next'
+
 import { ProductsComponent } from '@/components/pages/products'
 
-export const ProductsPage = () => {
+const ProductsPage: NextPage = () => {
   return <ProductsComponent />
 }
+
+export default ProductsPage
