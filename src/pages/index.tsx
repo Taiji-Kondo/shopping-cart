@@ -12,7 +12,7 @@ const Page: VFC = () => {
         <PageSEO seo={{ title: 'top' }} />
         top
         <Button colorScheme="blue">
-          <Link href={`/countries`}>Country</Link>
+          <Link href={`/products`}>商品ページへ</Link>
         </Button>
       </BaseLayout>
     </Fragment>

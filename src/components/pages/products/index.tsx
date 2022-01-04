@@ -1,3 +1,5 @@
+import { ProductsContents } from '@/components/pages/products/Contents'
+
 export const ProductsComponent = () => {
-  return <ProductsComponent />
+  return <ProductsContents />
 }
