@@ -1,7 +1,5 @@
 import { VFC } from 'react'
 
-import styles from '@/styles/Home.module.css'
-
 type FooterPropsType = {
   footer?: void
 }
@@ -9,7 +7,7 @@ type FooterPropsType = {
 export const Footer: VFC<FooterPropsType> = () => {
   return (
     <>
-      <footer className={styles.footer}>footer</footer>
+      <footer>footer</footer>
     </>
   )
 }
