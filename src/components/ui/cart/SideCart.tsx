@@ -1,16 +1,19 @@
-import { Box } from '@chakra-ui/react'
+import { Box, HStack, Text } from '@chakra-ui/react'
 
-import { Product } from '@/types/product'
+import { cartStateType } from '@/stores/atoms/cartState'
 
 type SideCartPropsType = {
-  products: Product[]
+  cart: cartStateType[]
 }
 
-export const SideCart = ({ products }: SideCartPropsType) => {
+export const SideCart = ({ cart }: SideCartPropsType) => {
   return (
-    <Box px={6} w={'xs'} borderLeftWidth={2}>
-      {products.map((product) => (
-        <Box key={product.id}>{product.productName}</Box>
+    <Box px={6} borderLeftWidth={2}>
+      {cart.map((cartItem) => (
+        <HStack spacing={2} key={cartItem.id}>
+          <Text fontWeight={'bold'}>{cartItem.productName}</Text>
+          <Text>×{cartItem.count}</Text>
+        </HStack>
       ))}
     </Box>
   )
