@@ -14,6 +14,7 @@ export const useCart = () => {
   // カート一覧からしていされた商品IDの商品を取り出す
   const _findCartItem = (productId: number) => cart.find((cartItem) => cartItem.id === productId)
 
+  // カートに追加
   const addCartItem = (productId: number) => {
     const selectedProduct = _findProductItem(productId)
     if (!selectedProduct) return
@@ -38,6 +39,7 @@ export const useCart = () => {
     }
   }
 
+  // カートから取り除く
   const removeCartItem = (productId: number) => {
     const _cart = cart.map((cartItem) => {
       if (cartItem.id !== productId) return cartItem
