@@ -5,7 +5,7 @@ export const productList: Product[] = [
     id: 1,
     productName: 'りんご',
     price: 100,
-    description: '赤いしいりんごです',
+    description: '赤いりんごです',
   },
   {
     id: 2,
