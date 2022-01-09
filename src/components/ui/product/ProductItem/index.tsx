@@ -1,14 +1,15 @@
 import { Box, Button, HStack, Stat, StatHelpText, StatLabel, StatNumber } from '@chakra-ui/react'
 import React from 'react'
 
-import { Product } from '@/types/product'
+import { useCartFpTs } from '@/hooks/cart/useCartFpTs'
 
-import { useCart } from '@/hooks'
+import { Product } from '@/types/product'
 
 type ProductItemPropsType = Product
 
 export const ProductItem = ({ id, productName, price, description }: ProductItemPropsType) => {
-  const { addCartItem, removeCartItem } = useCart()
+  // const { addCartItem, removeCartItem } = useCart()
+  const { addCartItem, removeCartItem } = useCartFpTs()
 
   const onClickAdd = (productId: number) => {
     addCartItem(productId)

@@ -1,6 +1,7 @@
 import { Box, HStack, StackDivider, Text, VStack } from '@chakra-ui/react'
 
-import { useCart } from '@/hooks'
+import { useCartFpTs } from '@/hooks/cart/useCartFpTs'
+
 import { cartStateType } from '@/stores/atoms/cartState'
 
 type SideCartPropsType = {
@@ -8,7 +9,8 @@ type SideCartPropsType = {
 }
 
 export const SideCart = ({ cart }: SideCartPropsType) => {
-  const { cartTotalPrice } = useCart()
+  // const { cartTotalPrice } = useCart()
+  const { cartTotalPrice } = useCartFpTs()
 
   return (
     <Box px={6} borderLeftWidth={2} w="100%">
