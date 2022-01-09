@@ -1,5 +1,6 @@
 import { Box, HStack, StackDivider, Text, VStack } from '@chakra-ui/react'
 
+import { useCart } from '@/hooks'
 import { cartStateType } from '@/stores/atoms/cartState'
 
 type SideCartPropsType = {
@@ -7,7 +8,7 @@ type SideCartPropsType = {
 }
 
 export const SideCart = ({ cart }: SideCartPropsType) => {
-  const totalPrice = cart.reduce((prev, cartItem) => prev + cartItem.price * cartItem.count, 0)
+  const { cartTotalPrice } = useCart()
 
   return (
     <Box px={6} borderLeftWidth={2} w="100%">
@@ -20,7 +21,7 @@ export const SideCart = ({ cart }: SideCartPropsType) => {
             </HStack>
           ))}
         </Box>
-        <Text fontWeight="bold">¥{totalPrice}</Text>
+        <Text fontWeight="bold">¥{cartTotalPrice}</Text>
       </VStack>
     </Box>
   )

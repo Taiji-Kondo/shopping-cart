@@ -52,5 +52,8 @@ export const useCart = () => {
     setCart(() => _cart.filter((cartItem) => cartItem.count !== 0))
   }
 
-  return { addCartItem, removeCartItem }
+  // カートの合計金額
+  const cartTotalPrice = cart.reduce((prev, cartItem) => prev + cartItem.price * cartItem.count, 0)
+
+  return { addCartItem, removeCartItem, cartTotalPrice }
 }
